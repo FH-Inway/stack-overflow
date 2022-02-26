@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxModelInfo xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<AppliedUpdates xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+	<Customization>Allow</Customization>
+	<Description>Content for Stack Overflow Q&amp;A 71235173:&#xD;
+https://stackoverflow.com/questions/71235173/field-identifier-0-does-not-exist-in-table-dirpartymap</Description>
+	<DisplayName>field-identifier-0-does-not-exist-in-table-dirpartymap-71235173</DisplayName>
+	<Id>896000231</Id>
+	<InternalsVisibleTo xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+	<Layer>14</Layer>
+	<Locked>false</Locked>
+	<ModelModule>field-identifier-0-does-not-exist-in-table-dirpartymap-71235173</ModelModule>
+	<ModelReferences xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+		i:nil="true" />
+	<ModuleReferences xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+		<d2p1:string>ApplicationFoundation</d2p1:string>
+		<d2p1:string>ApplicationPlatform</d2p1:string>
+		<d2p1:string>Directory</d2p1:string>
+	</ModuleReferences>
+	<Name>field-identifier-0-does-not-exist-in-table-dirpartymap-71235173</Name>
+	<Publisher>FH</Publisher>
+	<SolutionId>00000000-0000-0000-0000-000000000000</SolutionId>
+	<VersionBuild>0</VersionBuild>
+	<VersionMajor>1</VersionMajor>
+	<VersionMinor>0</VersionMinor>
+	<VersionRevision>0</VersionRevision>
+</AxModelInfo>
