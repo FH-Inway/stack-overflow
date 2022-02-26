@@ -1,0 +1,34 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.log
+*.$usr
+*/.vs
+
+## Ignore Dynamics 365 files
+/Metadata/**/bin
+/Metadata/**/Resources
+/Metadata/**/WebContent
+/Metadata/**/XppMetadata
+/Metadata/**/Reports
+/Metadata/*/*.xml
+!/Metadata/**/LabelResources
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
