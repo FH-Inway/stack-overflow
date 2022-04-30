@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SOCreateExcelWithListValidation</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+using OfficeOpenXml;
+
+class SOCreateExcelWithListValidation
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+        {
+            using (var package = new ExcelPackage(stream))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add('ListValidation');
+                
+                // add some values that can be validated
+                ExcelRange cell = worksheet.Cells.get_Item('A1');
+                cell.Value = 'Value1';
+                cell = worksheet.Cells.get_Item('A2');
+                cell.Value = 'Value2';
+                cell = worksheet.Cells.get_Item('A3');
+                cell.Value = 'Value3';
+
+                cell = worksheet.Cells.get_Item(2, 2, 50, 2);
+
+                // add validation
+                DataValidation.ExcelDataValidationList validation;
+                validation = worksheet.DataValidations.AddListValidation("B:B");
+                DataValidation.Formulas.Contracts.IExcelDataValidationFormula formula;
+                formula = validation.Formula;
+                formula.ExcelFormula = "=ListValidation!$A:$A";
+                
+                package.Save();
+            }
+            File::SendFileToUser(stream, 'ListValidation.xlsx');
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>
