@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AxClass xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+	<Name>SOCreateExcelWithBackgroundColor</Name>
+	<SourceCode>
+		<Declaration><![CDATA[
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
+
+class SOCreateExcelWithBackgroundColor
+{
+}
+]]></Declaration>
+		<Methods>
+			<Method>
+				<Name>main</Name>
+				<Source><![CDATA[
+    public static void main(Args _args)
+    {
+        using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
+        {
+            using (var package = new ExcelPackage(stream))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add('CellBackground');
+                
+                // add some values and colors
+                ExcelRange cell = worksheet.Cells.get_Item('A1');
+                cell.Value = 'Value1';
+                ExcelFill fill = cell.Style.Fill;
+                fill.PatternType = ExcelFillStyle::Solid;
+                ExcelColor backgroundColor = fill.BackgroundColor;
+                backgroundColor.SetColor(System.Drawing.Color::FromArgb(0, 87, 183));
+
+                cell = worksheet.Cells.get_Item('A2');
+                cell.Value = 'Value2';
+                fill = cell.Style.Fill;
+                fill.PatternType = ExcelFillStyle::Solid;
+                backgroundColor = fill.BackgroundColor;
+                backgroundColor.SetColor(255, 255, 215, 0);
+
+                package.Save();
+            }
+            File::SendFileToUser(stream, 'CellBackground.xlsx');
+        }
+    }
+
+]]></Source>
+			</Method>
+		</Methods>
+	</SourceCode>
+</AxClass>
